@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+}
+
+.reload 
+{
+    height: 100px;
+    width: 100px;
+    border: 16px solid #f3f3f3;
+    border-top: 16px solid goldenrod ;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+    position: relative;
+    top: 45%;
+    left: 45%;
+}
+
+@keyframes spin{
+   
+    0%{
+        transform: rotate(0deg);
+    }
+    100%
+    {
+        transform: rotate(360deg);
+    }
+}

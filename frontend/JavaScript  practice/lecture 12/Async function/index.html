@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async functions</title>
+</head>
+<body>
+
+    <h1>Async functions</h1>
+    <p>Async function is a more cleaner way to work with asynchronous javascript it is more compact and more easy to understand cour code when we write code with async functions</p>
+    <p>to understand async function we have to understand two keyword 
+        <ol>
+            <li>Async</li>
+            <li>await</li>
+        </ol>
+    </p>
+
+    <h2>async keyword </h2>
+    <p>async key creates async function when we add async keyword infront of any function it will become a async function </p>
+    <p>Every async function return promises whether we write or not</p>
+
+    <pre>
+        async function greet(){
+            return "hello world!"; <span>//returns a promise</span>
+        }
+        let hello = async()=> {}; <span>//returns a promise</span>
+    </pre>
+    
+    <p>if any error occers the promise will be returned but the state will be rejected </p>
+    
+
+    <h2>Await keyword</h2>
+    <p>Await function pauses all the sorrounding async until the promise is settled(resolved or rejected)</p>
+
+    <pre>
+        function getNUm(){
+            return new Promise((resolve,rejected) => {
+              setTimeout(()=>{
+                let num = Math.floor(Math.random()*10)+1;
+                console.log(num);
+                resolve();
+              },1000);  
+            });
+        };
+        
+        async function demo1() {
+            await getNUm();
+                  getNUm();
+                  getNUm();
+        }
+    </pre>
+
+    <h1 id="mColor">Demo MultiColor Function using Async and await</h1>
+
+    <pre>
+        let element = document.querySelector("#mColor");
+
+            function multicolor(color){
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                        element.style.color = color;
+                        resolve();
+                    },1000);
+                    
+                });
+            } 
+
+            async function colored(){
+                await multicolor("red");
+                await multicolor("green");
+                await multicolor("blue");
+                await multicolor("orange");
+                await multicolor("grey");
+                
+            }
+
+            colored();
+
+    </pre>
+
+    <h2>How to handle rejection with await</h2>
+    <p>we can handle promise rejection using ttry and catch method</p>
+    <pre>
+        we put all the await calls in the try and error is catch in the catch 
+    </pre>
+
+    <pre>
+        async function colored(){
+            try{
+             await multicolor("red");
+             await multicolor("green");
+             await multicolor("blue");
+             await multicolor("orange");
+             await multicolor("grey");
+            }
+            catch(err){
+                 console.log("error catch");
+                 console.log("err");
+            }
+             
+         }
+    </pre>
+
+    
+
+    <script src="app.js"></script>
+</body>
+</html>

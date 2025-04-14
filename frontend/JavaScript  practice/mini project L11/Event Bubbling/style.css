@@ -1,0 +1,22 @@
+body{
+    background-color: #000;
+    color: #fff;
+}
+div{
+    background-color: pink;
+    color: #000;
+    height: 200px;
+    width: 400px;
+}
+
+ul{
+    background-color: blue;
+
+}
+
+li{
+    background-color: greenyellow;
+}
+span{
+    color: green;
+}

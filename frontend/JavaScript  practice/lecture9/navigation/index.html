@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation</title>
+</head>
+<body>
+    <h1>Navigation</h1>
+    <pre>
+        parentElement 
+        let h4 = document.querySelector('h4');
+        h4.parentElement
+        <span>// gives parent of h4</span>
+
+        children
+        let box = document.querySelector('.box');
+        box.children;
+        <span>//gives all the children of element contain box class</span>
+        box.childElementCount; gives no of child element present in element with box class
+
+        previousElementSibiling / nextElementSibiling
+
+        box.children[1].previousElementSibling; <span>//Gives element come before children[1]</span>
+        box.children[1].nextElementSibiling; <span>//Gives element came after children[1]</span>
+    </pre>
+
+    <h1>Adding Elements</h1>
+    <p>let newP = Document.createElement('p');</p>
+    <pre>
+        <li>appendChild(element)</li>
+        <li>append(element)</li>
+        <li>prepend(element)</li>
+        <li>insertAdjacent(where,element)</li>
+
+
+        console.dir(newP);
+        newP.innerText = "Hi, I am a new P";
+
+        let div = document.querySelector('div'); 
+        div.appendChild(newP);
+
+        <span>// now this paragraph is inserted in in div</span>
+        newP.append(" this is new text");
+        <span>//Using this we can add more text in our new p or we can also add element in this </span>
+        <span>//append add element or text at the end</span>
+        <span>//prepend add element or text at the start</span>
+        div.prepend(newP);
+        <span>// using insertAdjecent we can defin exactly where we have to add the element and text </span>
+
+        let btn = document.creaetElement('button');
+        btn.innerHTML = "NEW BUTTON!!";
+        p.insertAdjacentElement('beforebegin' , btn);
+        <span>//adds element before paragraph </span>
+        p.insertAdjecentElement('afterbegin' , btn);
+        <span>//adds element at the starting of the p </span>
+        p.insertAdjecentElement('beforeend' , btn);
+        <span>//adds element at the ending of the p </span>
+        p.insertAdjecentElement('afterend' , btn);
+        <span>//adds element after paragraph </span>
+
+
+
+    </pre>
+
+    <h1>Remove Element</h1>
+    <pre>
+        <li>removeChild(element)</li>
+        <li>remove(element)</li>
+
+        <span>//like we are adding paragraph we can also remove paragraph using remove method</span>
+        <span>//remove child acts like append child but append adds element and remove removes element</span>
+        <span>// remove acts like append method but it removes element</span>
+
+        p.remove();
+        <span>// full paragraph is removed</span>
+        body.remove();
+        <span>//full body is removed</span>
+
+    </pre>
+    
+</body>
+</html>

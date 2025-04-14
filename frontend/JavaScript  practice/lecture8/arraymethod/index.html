@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array method</title>
+</head>
+<body>
+    <h1>Array Methods</h1>
+    <ul>
+        <li>forEach</li>
+        <li>map</li>
+        <li>filter</li>
+        <li>some</li>
+        <li>every</li>
+        <li>reduce</li>
+    </ul>
+
+    <h2>forEach</h2>
+    <p>arr.forEach(some function defination or name)</p>
+    <pre>
+        let arr = {1,2,3,4,5};
+        let print = function (el) {
+            console.log(el);
+        };
+
+        arr.forEach(print);
+        arr.foreach(el) => {
+            console.log(el);
+        };
+
+    </pre>
+    <h2>Map</h2>
+    <p>let newArr = arr.map(some function defination or name);</p>
+
+    <pre>
+        <span>// map function creates a new array with returned value </span>
+        let num = [1,2,3,4]; 
+        let double = num.map(function(el){
+            return el*2;
+        });
+    </pre>
+
+    <h2>Filter</h2>
+    <p>Let newArr = arr.filter(some function defination or name);</p>
+    <pre>
+        <span>// if callback is false it do not add element in new array </span>
+       
+        <span>// if caleback give true element will add in our new array if give false element will not add</span>
+
+        let nums = [2,4,1,5,6,2,7,8,9];
+
+        let even = nums.filter((num) => (num%2 == 0));
+    </pre>
+
+    <h2>Every</h2>
+    <p>returns true if every element of array gives true for some function . Else return false.</p>
+    <p>arr.every(some function defination or name);</p>
+    <pre>
+        [1,2,3,4].eevery( (el) => (el%2 == 0));
+        <span>//false</span>
+        [2,4].every( (el) =>  (el%2 == 0));
+        <span>//true</span>
+        <span>It is like a logical AND </span>
+    </pre>
+
+    <h2>Some</h2>
+    <p>Returns true if some elements of array give true for some function Else returns false .</p>
+    <p>arr.some(some function defination or name);</p>
+    <pre>
+        [1,2,3,4].some( (el) => (el%2 == 0));
+        <span>//true</span>
+        [1,3].some( (el) => (el%2 == 0));
+        <span>//false</span>
+        <span>// it is like a logical OR </span>
+    </pre>
+
+    <h1>Reduce</h1>
+    <p>Reduces the array to a single value</p>
+    <p>arr.reduce(reducer function with 2 variables for (accumulator , element) );</p>
+
+    <pre>
+        <span>// every element is passed in element variable</span>
+        <span>// returned value is stored in accumulator</span>
+        [1,2,3,4].reduce( (res,el) => (res+el) );
+        <span>//10</span>
+    </pre>
+
+</body>
+</html>

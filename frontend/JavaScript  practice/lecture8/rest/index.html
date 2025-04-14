@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rest in js</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #darkBg{
+            display: none;
+        }
+
+        #darkBg:checked + div.body{
+            background-color: black;
+            color: white;
+        }
+
+        span{
+            color: green;
+        }
+
+        .body{
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="checkbox" name="background" id="darkBg">
+    <div class="body">
+        <label for="darkBg">click to generate Dark Background</label>
+
+        <h1>Rest</h1>
+        <p>Allows a function to take an indefinite number of arguments and bundles them in an array</p>
+        <br>
+
+        <pre>
+            function sum(...args) {
+                return args.reduce( (add,el) => add +el);
+            }
+
+            function sum(...args)
+            {
+                return args.reduce((sum,el) => sum+el);
+            }
+
+            function min(...args){
+                return args.reduce((min,el) => 
+                {
+                    if(min > el)
+                    {
+                        return el;
+                    }
+                    else
+                    {
+                        return min;
+                    }
+                  
+                });
+            }
+        </pre>
+    </div>
+
+    
+
+    
+</body>
+</html>

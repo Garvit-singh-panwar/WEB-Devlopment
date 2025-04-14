@@ -1,0 +1,35 @@
+h1{
+    color: maroon;
+}
+
+.post{
+    background-color: blanchedalmond;
+}
+
+.user{
+    font-style: italic;
+}
+button{
+    padding: 2px 10px;
+    position: relative;
+    color: white;
+    background-color: transparent;
+    /* background-image: linear-gradient(to bottom right, red, yellow); */
+    z-index: 1;
+}
+button::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+   
+    background-image: linear-gradient(to bottom right ,#4158D0,#C850C0,#FFCC70 );
+    z-index: -1;
+    filter: blur(5px);
+}
+
+

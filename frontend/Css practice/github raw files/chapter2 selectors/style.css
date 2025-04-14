@@ -1,0 +1,120 @@
+*{
+    font-family: "Courier New";
+}
+
+h1,h3{
+    color: #b92b27;
+}
+
+#login{
+    background-color: white;
+}
+
+#signup{
+    background-color: #b92b27;
+}
+
+.upvote{
+    background-color: green;
+    color: aliceblue
+}
+
+/* descendant selector */
+.post a{
+    color: purple;
+    background-color: yellow;
+}
+nav ul li a{
+    color: hotpink;
+}
+
+/* Adjacent sibiling Combinator */
+/* vo sare tag jo ek tag k bad likhe gaye he */
+
+p+h3{
+    text-decoration: underline;
+}
+
+.upvote+button{
+    background-color: cornflowerblue;
+    color: darkblue;
+}
+/* child selector */
+div > input 
+{
+    background-color: darksalmon;
+}
+
+/* attribute selector */
+input[type = "text"]
+{
+    color: red;
+}
+
+input[type = " password"]
+{
+    color: green;
+}
+
+input[type]
+{
+    background-color: ghostwhite;
+}
+
+/* explore attribute selector */
+
+/* practice Question css */
+
+#myId p {
+    color: green;
+
+}
+/* ---------X-------- */
+
+/* pseudo class  */
+
+button:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+p:active{
+    font-weight: bold;
+    color: green;
+}
+
+[type = "radio"]:checked + label{
+    color: red;
+    font-weight: bold;
+}
+
+.post:nth-of-type(2n){
+background-color: blanchedalmond;
+}
+/* hr nth element ka bg colog change ho jayega */
+
+
+/* psuedo elements */
+/* A keyword added to a aselector that lets you stylre a specific part of the selected elements */
+/* 
+::first-letter   abc   -> (a)bc ki property change 
+::first-line    change in first line of paragraph  or any thing
+::selection  change in selected part
+ */
+
+ h1::first-letter{
+    color: #000;
+
+ }
+
+ p::first-line{
+    color: blue;
+ }
+
+ p::selection{
+    color: yellowgreen;
+    background-color: black;
+ }
+
+
+

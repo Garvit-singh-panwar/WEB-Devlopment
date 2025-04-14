@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+h1{
+    padding: 20px;
+    animation: topDown 1.5S ease-in;
+}
+
+@keyframes topDown {
+    from{
+        transform: translateY(-30px);
+        opacity: 0;
+        /* scale: 2; */
+    }
+
+}
+
+
+button{
+    margin: 0 40px;
+padding: 10px 40px;
+border-radius: 1rem;
+background-image: linear-gradient(to right,#4158D0 ,#C850C0, #FFCC70);
+/* background-size: contain; */
+border-color: #C850C0;
+font-size: 20px;
+}
+.fact{
+    margin: 20px 50px;
+    font-size: 18px;
+}

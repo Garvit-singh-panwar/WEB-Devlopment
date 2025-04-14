@@ -1,0 +1,27 @@
+#external{
+   padding: 10px;
+    border: 2px solid black;
+    width: 75px;
+}
+.internal{
+    height: 50px;
+    width: 50px;
+    border: 2px solid black;
+    margin: 10px;
+    border-radius: 50%;
+}
+#inbox{
+    height: 200px;
+    width: 70px;
+    border: 2px solid black;
+}
+
+#light1{
+    background-color: red;
+}
+#light2{
+    background-color: yellow;
+}
+#light3{
+    background-color: green;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destructering</title>
+</head>
+<body>
+    <h1>Destructering</h1>
+    <p>Storing values of array into multiple variables</p>
+
+    <pre>
+        let names = ["tony" , "bruce" , "steve" , "peter"];
+        let [winner , runnerup] = names;
+        console.log(winner , runnerup); <span>//"tony" "bruce"</span>
+    </pre>
+
+    <h2>Destructering for objects</h2>
+
+    <pre>
+        const student = {
+            name: "karan" ,
+            age: 14 ,
+            class: 9,
+            subject: ["hindi" , "english" , "math" , "science"],
+            username: "karan@123",
+            password: "abcd"
+        };
+
+        let {username: user , password: secret } = student;
+
+        <span>// user = "karan@123" and secret = "abcd" </span>
+    </pre>
+</body>
+</html>

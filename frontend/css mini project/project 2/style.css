@@ -1,0 +1,179 @@
+body{
+    font-family: "Montserrat", serif;
+    margin: 0px;
+    background-color: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+.side-bar{
+    background-color: aquamarine;
+    width: 340px;
+    border-radius: 1rem;
+    background-color: #000;
+}
+
+.main-content{
+    background-color: #121212;
+    flex: 1;
+    border-radius: 0.5rem;
+    overflow: auto;
+}
+
+.music-player{
+    background-color: antiquewhite;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 72px;
+}
+
+.nav{
+    height: 100px;
+    flex-direction: column;
+    background-color: #121212;
+    border-radius: 0.5rem;
+    justify-content: center;
+    margin: 10px;
+}
+
+.nav-options{
+    line-height: 2rem;
+    opacity: 0.7;
+    padding: 0.5rem 0.75rem;
+}
+
+.nav-options i{
+    font-size: 1.25rem;
+    color: #fff;
+}
+
+a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.nav-options a{
+    font-size: 1rem;
+    margin-left: 1rem;
+}
+
+.nav-options:hover{
+    opacity: 1;
+}
+
+.nav-library{
+  
+    height: 100%;
+    background-color: #121212;
+    border-radius: 0.5rem;
+    margin: 0.75rem;
+}
+
+.options{
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0.75rem;
+    align-items: center;
+    
+}
+
+.lib-options img{     
+height: 1.5rem;
+width: 1.5rem;
+}
+
+.lib-options a{
+    margin-left: 1rem;
+    font-size: 1rem;
+
+}
+
+.icons i{
+    margin-left: 1rem;
+    opacity: 0.7;
+}
+
+.icons i:hover{
+    opacity: 1;
+}
+.box{
+      margin: 0.5rem ;
+      margin-bottom: 1.5rem; 
+      /* height: 120px; */
+      background-color: #232323; 
+      padding: 0.5rem 0.75rem; 
+      border-radius: 0.5px; 
+}
+
+.box .p1{
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+.box .p2{
+    font-size: small;
+    opacity: 0.9;
+}
+
+.badge{
+    background-color:#fff;
+    color: #000;
+    border: none;
+    border-radius: 100px;
+    padding: 0.5rem 0.75rem;
+    margin: 0.5rem;
+}
+
+
+.sticky-nav{
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    margin: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.sticky-nav .sticky-nav-icons{
+    display: flex;
+    align-items: center;
+
+}
+
+.cicon{
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    background-color: #000;
+    color: #fff;
+    border-radius: 50%;
+}
+
+.sticky-nav .sticky-nav-options{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sticky-nav .sticky-nav-options{
+    margin-right: 1.5rem;
+}
+ 
+.dark-badge{
+    background-color: #000;
+    color: #fff;
+}
+
+@media (max-width: 1000px)
+{
+    .hide{
+        display: none;
+    }
+}

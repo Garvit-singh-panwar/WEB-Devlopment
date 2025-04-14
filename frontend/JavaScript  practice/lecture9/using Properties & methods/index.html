@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Properties and Methods</title>
+</head>
+<body>
+    <h1>Using Properties &amp; Methods</h1>
+    <br>
+    <br>
+    <h3>innerText</h3>
+    <br>
+    <p>Shows the visible text contained in a node</p>
+    <br>
+    <br>
+    <h3>textContent</h3>
+    <br>
+    <p>Shows all the full text</p>
+    <br>
+    <br>
+    <h3>innerHTML</h3>
+    <br>
+    <p>Shows the full markup</p>
+    
+    <h1>Manipulating Attributes</h1>
+    <p>obj.getAttribute(attr)</p>
+    <p>boj.setAttribute(attr,val)</p>
+    <pre>
+        <span>// it is also called as getters and setters</span>
+        <span>getters and setters is a set of two functions by which we can get a value or set a value </span>
+
+        let img = document.queryselector('img');
+        img.getattribute('id');
+        img.setAttribute('id' , 'spidermanImg')
+    </pre>
+
+    <h1>Manipulate Style</h1>
+    <h3>Style Property</h3>
+    <p>obj.style</p>
+    <pre>
+        let heading = document.querySelector('h1');
+        heading.style.color = "yellow";
+        heading.style.backgroundColor ="green";
+    </pre>
+
+
+    <h2>Manipulating Style Using ClassList</h2>
+    <pre>obj.classList
+
+        classList.add() to add new classes
+
+        classList.remove() to remove classes
+
+        classList.contains() to check if class exists
+
+        classList.toggle() to toggle between add &amp; remove
+    </pre>
+</body>
+</html>

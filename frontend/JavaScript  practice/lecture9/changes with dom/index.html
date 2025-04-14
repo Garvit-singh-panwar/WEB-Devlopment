@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changes with DOM in JS</title>
+</head>
+
+<body>
+    <h1>Changes in document with Dom</h1>
+    <pre>
+        <span>//it is a two step process to change and manuipulate html using javaScript </span>
+        <ol>
+            <li>Select</li> <span>// if we want to do some change in image we have to select image</span>
+            <li>change and manipulate</li> <span>//After selecting we are changing and manipulating that object</span>
+        </ol>
+
+        console.dir(document.all); <span>// contain all the elements object which we used in our webpage</span>
+        console.log(document.all[8]); <span>//gives our h1 object because h1 is the 8th element used in webpage indx is given  according to our web page element order you have to check this in document.all</span>
+        document.all[8].innerText = "Peter Parker";
+        <span>innerText is the property in our h1 object h1 text is now changed into peterparker</span>
+
+        
+    </pre>
+    <h2>How to select element</h2>
+    <li>getElementById</li>
+    <p>returns the element as an object or null (if not found)</p>
+    <pre>
+        <span>//we can select object using there id</span>
+        <span>//Ex p tag with a id description</span>
+        document.getElementById("description");
+        console.dir(document.getElementById("description"));
+    </pre>
+
+    <h2>Selecting Elements by class name</h2>
+    <h3>getElementByClassName</h3>
+    <p>Returns the Elements as an HTML Collection or empty collection (if not found)</p>
+    <pre>
+        document.getElementByClassName("oldImg");
+        <span>//Returns a collection of object</span>
+        <span>//if we want to access a perticular object we can do it by selecting an object by its indx</span>
+        document.getElementByClassName("oldImg")[0];
+        <span>//it returns an object of class oldImg at 0 index</span>
+
+        let smallImage = document.getElementByClassName("oldImg");
+        for(let i = 0 ; i &lt; smallImage.length ; i++)
+        {
+            smallImage[i].src = "assets/spyderman_img.png";
+            console.log(`vlaue of img no. $(i) is changed.`);
+
+        }
+    </pre>
+
+    <h2>Selecting Element Using tagname</h2>
+    <h3>getElementByTagName</h3>
+    <p>Returns the Element as an HTML Collection or empty collection (if notfound)</p>
+    <pre>
+        document.getElementByTagName("p")[1].innerText = "abc";
+        <span>//Paragraph text changed into abc</span>
+
+    </pre>
+
+    <h2>Query Selectors</h2>
+    <h3>Allows us to use any CSS selector</h3>
+
+    <pre>
+        document.querySelector('p'); <span>// Selects first p element </span>
+        document.querySelector('#myId'); <span>//Selects first element with id = myId</span>
+        document.querySelector('.myClass'); <span>//Selects first element with class = myClass</span>
+        document.querySelectorAll("p"); <span>//Selects all p elements</span>
+    </pre>
+
+
+
+
+</body>
+
+</html>

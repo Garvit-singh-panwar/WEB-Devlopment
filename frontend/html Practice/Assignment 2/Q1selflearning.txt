@@ -1,0 +1,115 @@
+Q1 self learning 
+search on the internet & learn to use video tag in html .(simmilar to img tag)
+
+
+The `<video>` tag in HTML is used to embed video content on a webpage. It's one of the multimedia elements introduced in HTML5. Here’s everything you need to know in simple terms:
+
+---
+
+### Basic Syntax
+```html
+<video controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+```
+
+---
+
+### Key Features
+1. **Self-contained**: It doesn't need external plugins (like Flash) to work. Modern browsers can play videos directly.
+2. **Attributes**: You can customize how the video behaves with attributes.
+
+---
+
+### Common Attributes
+- **`controls`**: Adds play, pause, volume, and other controls to the video.
+    ```html
+    <video controls>
+    ```
+- **`autoplay`**: Makes the video play automatically when the page loads.
+    ```html
+    <video autoplay>
+    ```
+- **`loop`**: Plays the video on repeat.
+    ```html
+    <video loop>
+    ```
+- **`muted`**: Starts the video with no sound.
+    ```html
+    <video muted>
+    ```
+- **`poster`**: Displays an image before the video starts playing (like a thumbnail).
+    ```html
+    <video poster="thumbnail.jpg">
+    ```
+- **`width` and `height`**: Sets the size of the video player.
+    ```html
+    <video width="640" height="360">
+    ```
+
+---
+
+### Adding Video Files
+To include a video, use the `<source>` tag inside the `<video>` tag. This lets you specify:
+- **`src`**: Path to the video file.
+- **`type`**: Format of the video file.
+
+Example:
+```html
+<video controls>
+    <source src="movie.mp4" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+</video>
+```
+
+---
+
+### Fallback Text
+If a browser doesn’t support the `<video>` tag, you can display a message:
+```html
+<video controls>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+```
+
+---
+
+### Supported Formats
+Not all browsers support all video formats. Here are common ones:
+- **MP4 (H.264)**: Widely supported.
+- **WebM**: Open-source format.
+- **Ogg**: Another open-source option.
+
+---
+
+### Example with Everything
+```html
+<video controls autoplay loop muted poster="thumbnail.jpg" width="640" height="360">
+    <source src="video.mp4" type="video/mp4">
+    <source src="video.webm" type="video/webm">
+    Your browser does not support the video tag.
+</video>
+```
+
+This example includes controls, plays automatically, loops, starts muted, has a thumbnail, and specifies multiple formats for compatibility.
+
+---
+
+### Advanced Features
+1. **JavaScript API**: You can control videos with JavaScript (e.g., play, pause, adjust volume).
+    ```javascript
+    const video = document.querySelector("video");
+    video.play();  // Start playing
+    video.pause(); // Pause video
+    ```
+2. **Custom Controls**: You can create your own controls using JavaScript and hide the default controls.
+
+---
+
+### Browser Support
+All modern browsers support the `<video>` tag, but older versions might not. Always test your video on different browsers.
+
+That's the `<video>` tag in a nutshell! Let me know if you'd like to dive deeper into any part. 😊

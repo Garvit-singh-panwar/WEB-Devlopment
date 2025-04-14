@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript</title>
+    <style>
+        body {
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Call Stack</h1>
+    <p>we we do a function call our javaScript make a call stack</p>
+    <p>Call stack has two words <br>
+    <ol>
+        <li>call</li>
+        <li>Stack</li>
+    </ol>
+    <br>
+    when we execute a function it is called as function call
+    <br>
+    <pre> ex hello();</pre>
+    <br>
+    <p>Stack is a lifo type data structure in our programing language </p>
+    </p>
+
+    <pre>
+                  ___                          _____
+                 /   \     First In           /     \   Last Out
+                1  |          |         |    4    |
+                2  |          |         |    3    |
+                3  |          |   =>    |    2    |
+                4  |          |         |    1    |
+                   |__________|         |_________|
+    </pre>
+
+
+    <p>what is the meaning of call stack ?</p>
+    <p> function can call each other all the calls stored in our stack which contain all the function information</p>
+
+    <h3>Example of the Call Stack for our javaScript program</h3>
+
+    <pre> function one(){
+            return 1;                                
+        }
+
+        function two(){
+            return one() + one();
+        }
+
+        function three(){
+            let ans = two() + one();
+            console.log(ans);
+        }
+
+        three();
+
+
+            |           |               |         |        |         |        |         |        |          |        |          |         |          |        |            |        |            |
+            |           |               |         |        |         |        |         |        |          |        |          |         |          |        |            |        |            |
+            |           |          =>   |         |   =>   |___one___|    =>  |         |   =>   |___one____|   =>   |__________|   =>    |__________|   =>   |____________|   =>   |            |
+            |           |               |___two___|        |___two___|        |__two(1)_|        |__two(1)__|        |two(1)+(1)|         |__________|        |_____one____|        |____________|
+        ans-|___three___| &lt;-- func call |__three__|        |__three__|        |__three__|        |__three___|        |___three__|         |_three(2)_|        |__three(2)__|        |three(2)+(1)|
+    (local var)
+    (value -> undefined)
+    </pre>
+
+    <p>output on console :- 3</p>
+
+    <h2>BreakPoints</h2>
+    <p>we can track javaScript callStack through our browser with the help of breakpoints </p>
+    <p>when we have a big line of code and at the time of execution we want to see a perticular line of code that how it
+        will execute so at that like we can add breakpoints </p>
+    <p>Breakpoints are generally used for debugging</p>
+
+    <h2>JavaScript is a Single Threaded Language</h2>
+    <p>at a time javaScript can only do 1 work </p>
+    <p>Callbacks helps us to deal with javaScript single threaded nature</p>
+    <p>browser is of multi threaded nature javascript can execute one thing at a time but our browser can handle delays
+    </p>
+
+    <p>JavaScript executes function line by line but when we use setTimeout, callback or setTimeInterval function type
+        things then there we are making JavaScript nature asynchronous </p>
+    <p>Asynchronous means not every thing will happen continiously(line by line execution ) may be some extra things
+        happen in between something when we did previously If there delay is over then it will execute now . <br> this
+        we call as Asynchronous programming or Asynchronous nature of javaScript. </p>
+
+    <h1 id="Asc">Asynchronous Nature of javaScript</h1>
+    <h3>callback Hell</h3>
+    <p>the very first problem that we face due to asynchronous nature of javaScript is callback Hell</p>
+
+    <pre>
+        let h1 = document.querySelector("#Asc");
+
+        function changeColor(color,delay,nextColorChange){
+            setTimeout(()=>{
+                h1.style.color = color;
+                if(nextColorChange) nextColorChange();
+            } , delay);
+        }
+
+
+        changeColor("red" , 1000 ,()=>{
+            changeColor("orange" , 1000 ,()=>{
+                changeColor("green",1000,()=>{
+                    changeColor("yellow",1000,()=>{
+                        changeColor("blue",1000);
+                    });
+                });
+            });
+        });
+
+        <span>// callbacks nesting Callback hell</span>
+    </pre>
+
+    <p>To prevent us from callback hell javaScript invent many many things </p>
+    <p>we use promised , async & awake keyword </p>
+
+    <h2>Promises</h2>
+    <p>The promises object represent the eventual completion (or failure) of an asynchronous operation and its resulting
+        value.</p>
+    <p>promise is a object which contain two thing <br/>
+        <ol>
+            <li>resolve (callback for sucess)</li>
+            <li>reject (callback for failure)</li>
+        </ol>
+        <br>
+        promise object have three state -&gt; pending , reject , fulfill(resolve),
+    </p>
+
+    <pre>
+        <span>//function with callback hells</span>
+
+        function savetoDb( data , sucess, failure) {
+            let internetSpeed = Math.floor(Math.random() * 10) + 1;
+        
+            if (internetSpeed > 4) {
+        
+                sucess();
+            } else {
+        
+                failure();
+            }
+        
+        
+        }
+        
+        
+        savetoDb("apna college",
+            () => {
+                console.log("your data was saved : ");
+                savetoDb("Hello World",
+                    () => {
+                        console.log("Sucess2 : data2 saved");
+                        savetoDb("Shradha",
+                            () => {
+                                console.log("Sucess3 : data3 saved");
+                            },
+                            () => {
+                                console.log("failure3 : weak connection");
+                            });
+                    },
+                    () => {
+                        console.log("failure2 : weak connection");
+                    });
+            },
+            () => {
+                console.log("weak Connection . data not saved");
+            });
+        
+            console.log(`\n \n promises function \n \n `)
+        
+
+            <span> // function using promises</span>
+
+        
+            function savetoDb1(data) {
+                    return new Promise((success , failure) =>{
+                        let internetSpeed = Math.floor(Math.random() * 10) + 1;
+                        if(internetSpeed > 4){
+                            success("Success : data was saved");
+                        } else {
+                            failure("failure : weak connection");
+                        }
+                });
+            }
+    </pre>
+
+    <h2>promise chaining</h2>
+    <h3>Improved version </h3>
+    <p>The work we're doing through callbacks we'll be doing with Promise Channing</p>
+
+    <pre>
+                savetoDb1("apna college")
+            .then(()=>{
+                console.log("data1 saved. promise was resolved. ");
+                return savetoDb1("helloworld");  
+            })
+            .then(()=>{
+                console.log("data2 saved");
+                return savetoDb1("garvit")
+            })
+            .then(()=>{
+                console.log("data3 saved");
+            })
+            .catch(()=>{
+                console.log("promise was rejected");
+            });
+    </pre>
+
+    <p>Promises are rejected and resolved with some data (valid results or errors)</p>
+    <pre>
+        savetoDb1("apna college")
+        .then((result)=>{
+            console.log("data1 saved. promise was resolved. ");
+            console.log(`result : ${result}`);
+            return savetoDb1("helloworld");  
+        })
+        .then((result)=>{
+            console.log("data2 saved");
+            console.log(`result : ${result}`);
+            return savetoDb1("garvit")
+        })
+        .then((result)=>{
+            console.log("data3 saved");
+            console.log(`result : ${result}`);
+        })
+        .catch((error)=>{
+            
+            console.log("promise was rejected");
+            console.log(`error : ${error}`);
+        });
+    </pre>
+
+    <h3 id="change">Reapplying callback hell color function with promise </h3>
+
+    <pre>
+        <span>//code</span>
+
+        let element = document.querySelector("#change")
+        function changingColor(color,delay){
+    
+           return new Promise((resolve ,reject)=>{
+                setTimeout(() => {
+                    element.style.color = color;
+                    resolve("color changed!");
+                }, delay);
+           })
+    
+        }
+    
+        changingColor("red",1000)
+        .then(()=>{
+            return changingColor("blue",1000);
+        }
+        )
+        .then(()=>{
+            return changingColor("yellow",1000);
+    
+        })
+        .then(()=>{
+            changingColor("green",1000);
+        })
+    </pre>
+    <script src="app.js"></script>
+</body>
+
+</html>

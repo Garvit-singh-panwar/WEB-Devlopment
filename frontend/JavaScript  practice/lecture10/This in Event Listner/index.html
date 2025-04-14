@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event listner</title>
+</head>
+<body>
+    <h1>This in Event Listner</h1>
+    <p>When 'this' is used in a callback of event handler of something, it refers to that something.</p>
+
+    <pre> 
+        this act as a object of eevent listner
+        let btn = document.querySelector("button");
+        btn.addEventListner("click" , function(){
+            console.log(this);
+        });
+        <span>//in this button is our this</span>
+    </pre>
+
+    <h2>Keyboard Event</h2>
+    <br>
+    <h3>Open console to check </h3>
+    <h4>move character in game with arrow key in input type</h4>
+    <input type="text"/>
+    <pre>
+        <span>//code for this</span>
+
+        input.addEventListener("keydown" , function(event) {
+            if(event.code == "ArrowUp" )
+            {
+                console.log("Move Upward");
+            }
+            else if(event.code == "ArrowDown")
+            {
+                console.log("Move downwards");
+            }
+            else if(event.code == "ArrowLeft")
+            {
+                console.log("Move left");
+            }
+            else if(event.code == "ArrowRight")
+            {
+                console.log("Move right");
+            }
+        
+            
+        
+        });
+
+    </pre>
+
+
+    <h1>Form Event</h1>
+    <form action="/action">
+        <input type="text" placeholder="Username"/>
+        <button>register</button>
+    </form>
+
+    <pre>
+        <span> //do tis in javascript</span>
+        
+        let form = document.querySelector("form");
+
+        form.addEventListener("submit" , function(event){    
+            event.preventDefault();   <span>// it stops the action event which triggers when we click register button in form</span>
+            alert("form submitted");
+        });
+
+        <span>//when we click on register it will generate a alert</span>
+    </pre>
+
+    <h2>Extracting form data</h2>
+
+    <form action="/action" id="form1">
+        <input type="text" name="username"  placeholder = "username " id="user">
+        <br/>
+        <input type="password" name="password" placeholder="password" id="pass">
+        <br/>
+        <button>register</button>
+    </form>
+
+    <pre>
+
+        let form = document.querySelector("form");
+
+        form.addEventListener("submit" , function(event){    
+            event.preventDefault();   <span>// it stops the action event which triggers when we click register button in form</span>
+
+            let inp = document.querySelector("input");
+            console.log(inp.value);
+            <span>//in this input.innertext will not work to check this we have to see input object console.dir(inp);</span>
+            
+        });
+
+
+
+        <span>// lets check another example</span>
+
+        let form = document.querySelector("form");
+
+        form.addEventListener("submit" , function(event) {
+            event.preventDefault();
+            let user = document.querySelector("#user");
+            let pass = document.querySelector("#pass");
+            console.log(user.value);
+            console.log(pass.value);
+
+            alert(`Hi ${user.value} , your password is set to $(pass.value)`);
+
+        });
+       
+
+        <span>// we can also do this by selecting individual form element example</span>
+
+        let form = document.querySelector("form");
+
+        form.addEventListener("submit" , function(event) {
+            event.preventDefault();
+            let user = this.element[0];
+            let pass = this.element[1];
+
+            console.log(user.value);
+            console.log(pass.value);
+
+            alert(`Hi ${user.value} , your password is set to $(pass.value)`);
+
+            <span>//this code will run exactly like our previous code we extract form element by there index</span>
+        })
+
+    </pre>
+
+    <h3>More events</h3>
+        <h4>change event</h4>
+        <p>the Change event occurs when the value of an element has been changed (only works on &lt;input&gt; , &lt;Textarea&gt; and &lt;Select&gt; element)</p>
+        <br>
+        <h4>input Event</h4>
+        <p>The input event fires when the value of an &lt;input&gt; , &lt;select&gt; , or &lt;textarea&gt; element has been changed.</p> 
+
+        <form action="/action" id="form2">
+            <input type="text" id="newuser">
+            <button>register</button>
+        </form>
+        <pre>
+            let user = document.querySelector("#newuser");
+            user.addEventListener("change" , function(event){
+                event.preventDefault();
+                console.log("change event");
+                console.log(`final value = ${this.value}`);
+            } )
+
+            <span>when we type something in input box we click outside input box our change event runs </span>
+
+            user.addEventListener("input" , function(event){
+                event.preventDefault();
+                console.log("input Event")
+                console.log(`final value = ${this.value}`);
+
+
+            })
+
+            <span>//when we type something in input box every time when a key is pressed our input event runs </span>
+            <span>//non character key do not triger input events</span>
+
+        </pre>
+
+    <script src="app.js"></script>
+</body>
+</html>

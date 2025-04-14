@@ -1,0 +1,18 @@
+Q2 IS video tag a semantic tag ?
+Yes, the `<video>` tag is considered **semantic** in HTML. Here's why:
+
+### What Makes It Semantic?
+A **semantic tag** clearly describes its meaning and purpose to both the browser and developers. The `<video>` tag:
+- **Indicates purpose**: It explicitly tells the browser and developers that the content inside it is a video.
+- **Improves accessibility**: Assistive technologies (like screen readers) recognize `<video>` and understand that it contains video content.
+- **Readable code**: Makes the structure of the webpage easier to understand by looking at the tags used.
+
+### Why It’s Important
+Using semantic tags like `<video>` helps:
+- Search engines understand and index the content better.
+- Web accessibility tools provide a better user experience.
+- Developers maintain and debug code more easily.
+
+For comparison, using a `<div>` with video-related attributes would not be semantic, as it doesn’t convey the meaning of its content.
+
+In short, yes, `<video>` is semantic, and it’s good practice to use it when embedding videos!

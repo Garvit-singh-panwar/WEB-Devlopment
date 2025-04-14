@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>To Do App</h1>
+    <input type="text" placeholder="Enter your task">
+    <button>Add Task</button>
+    <ul>
+        
+    </ul>
+
+    <h1>Event Delegation</h1>
+    <p> when we add a new todo's our delete function did not recognize it or do not do any action on it</p>
+    <p>Same event listner do not apply on new list items</p>
+
+    <p>if we want that listner should also be applied on our new todo's we have to use event delegation  </p>
+    <p> event delegation is a phenomenon in which we use our bubbling property</p>
+
+    <p>if we want something have to trigger for our child element we will write same thing for our parent element  instead for writing listner for our parent element we write listner for our parent element</p>
+
+    <pre>
+        <span>// target gives the element on chich we are clicking </span>
+
+        <span>//node name gives the name of the element</span>
+
+        ul.addEventListener("click",function(event){
+            if(event.target.nodeName == 'BUTTON')
+            {
+                let listItem = event.target.parentElement;     <span>//to delete list we have to access the parent of button </span>
+                listItem.remove();
+            }
+        })
+
+    </pre>
+
+    
+    
+    <script src="app.js"></script>
+</body>
+</html>

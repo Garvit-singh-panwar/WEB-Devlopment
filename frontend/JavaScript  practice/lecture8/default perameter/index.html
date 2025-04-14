@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Default perameter</title>
+    <style>
+        span{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>Default perameter</h1>
+    <p>Giving a default value to the argument</p>
+
+    <pre>
+        function func(a,b = 2){
+            <span>//do something</span>
+        }
+
+        function sum(a,b = 3){
+            return a+b;
+        }
+        sum(2); <span>//5</span>
+
+        <span>/* function sum(a = 2 , b)
+            {
+                return a+b;
+            }
+
+            sum(1,3); in this case sum return 4
+            sum(1);  in this case a = 1 and b =undefined
+
+            this is wrong
+            passing default perameter to the first perameter variable not to other variable after default perameter variable
+
+            
+            */
+        </span>
+    </pre>
+    
+</body>
+</html>

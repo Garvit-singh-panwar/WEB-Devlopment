@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        span {
+            color: green;
+        }
+        #darkBg{
+            display: none;
+        }
+        #darkBg:checked +.body{
+            background-color: #000;
+            color: white;
+            height: 100vh;
+            width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <input type="checkbox" name="background" id="darkBg">
+    <div class="body">
+        <label for="darkBg">click to make background       dark  </label>
+        <h1>Spread</h1>
+        <p>Expands an interable into multiple value</p>
+
+        <pre>
+        function func(...arr) {
+           <span> //do something </span> 
+        }
+
+        <span>//Example </span>
+        Math.min(1,2,3); <span>// gives us the min value but we can only pass value in it</span>
+
+        <span>// if we store value in array we can pass like this</span>
+
+        let arr = [1,2,3,4,5,6];
+        Math.min(arr[1] , arr[2] , arr[3]); <span>// it will consume more time </span>
+        <span>//so instead of passing value like this we can pass value like</span>
+        Math.min(...arr); <span>//... is spread function</span>
+        <span>// it gives 1</span>
+    </pre>
+
+    <h2>Spread with array literals</h2>
+    <pre>
+        <span>// we can make a copy of array using spread operator</span>
+        let arr = [1,2,3,4,5];
+        let newArr = [...arr];
+        <span>// newArr = [1,2,3,4,5]</span> 
+        
+        <span>//if we want to breakdown sttrings into individual characters we can use spread operator</span>
+
+        let chars = [..."hello"];
+        console.log(chars); <span>//chars = ["h","e","l","l","o"</span>
+    </pre>
+
+    <h2>Spread with object literals</h2>
+    <pre>
+        let data = {
+            email: "ironman@gmail.com",
+            password: "abcd"
+        };
+
+        let datacopy = {...data , id: 123};
+        <span>// datacopy = {
+            email: "ironman@gmail.com",
+            password: "abcd"
+            id: 123
+        }; id :123 is the new property which we added in datacopy 
+        </span>
+    </pre>
+
+
+
+
+    </div>
+</body>
+
+</html>

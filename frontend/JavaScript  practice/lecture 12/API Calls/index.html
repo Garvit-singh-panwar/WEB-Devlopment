@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+</head>
+<body>
+    <h1>API (Application programing interface)</h1>
+    <p>Api is like a waiter we request some food from waiter. waiter goes in the kitchen take food from there . and give (response) food to </p>
+    <p>the same role API does user do not Access the server(kitchen) user access there API's </p>
+
+    <pre> 
+                (request)
+            user ->  [API] -> [server]-,
+              \_______/  \____________/
+               (response)
+    </pre>
+
+    <p>API are generally away to talk between two software wen two software want to interact they use API's  </p>
+    <p>The API's which use HTTP protocol mwns when API's do interaction on the basis of internet we call them web API's </p>
+    <p>generally in programming and in web development we are deling with web API's</p>
+    <p>in our request response cycle we get our HTML , CSS and JAvaScript but our this API's will return some data which is in the form of a special format called (JSON) they do not return HTML CSS and JavaScript</p>
+
+    <h2>JSON (JavaScript Object Notation )</h2>
+    <p>interestingly JSON is not a part of javaScript it is just a format </p>
+    <p>we can access API the format is JSON but we can access it in any language program</p>
+    <p>Before json we use XML as to recive API's Data in XML(extensible markup language). XML format is very similar to HTML format in the form of tags but they are not HTML we have custome tags in XML means we can make our own tags according to our data</p>
+    <p>JSON format is very much similar to javaScript object because it has key value pairs but in javascript object our keys are not strings but in json we have to write keys in double quots otherwise it will give us error if you want to more thing click here <a href="https://www.json.org/json-en.html">JSON</a></p>
+    <p>we also have JSON validators which validate that our data is in valid format or not</p>
+    <h3>Accessing data  from  JSON</h3>
+    <p>when we get some JSON response the response is in the form of string </p>
+    <p>so to access our data we have two important functions   
+        <ol>
+            <li>JSON.parse(data) <br/> To parse a string data into a JS object</li>
+            <li>JSON.stringify(json) <br>
+            to parse a JS Object data into JSON</li>
+        </ol>
+    </p>
+
+    <h2>Testing API request (tools)</h2>
+    <ul>
+        <li>Hoppscoth <br>
+        Hoppscoth is also simillar to postman we dont have to download or we can use it directly we dont need to signup also</li>
+        <li>Postman <br>
+        to use postman we have to download it and we have to signup it first  </li>
+    </ul>
+
+    <h3>Ajax</h3>
+    <p>Asynchronous javaScript and XML</p>
+    <p>It is basically a full process by which we can do our API call and then we get some data in response and this all process will happen Asynchronously</p>
+    <p>This API request response cyle will happen Asynchronously it will posible that we request some data from API and API will take some time to send the response so this will so our javascript code do not stop or wait for the response it will execute but when we recive response we can deal with that so this how we get the term asynchronous javascript and XML </p>
+    <p>
+        when we send some request or calls to api we call them AJAX calls because the all process happen asynchronously and there is no page loading we just recive or send data without any reload
+    </p>
+    
+    <h3>HTTP verbs</h3>
+    <p>when we send any request in http there are many verbs associated with that menas some work means we can send some get request some post request some delete request etc  </p>
+
+
+</body>
+</html>

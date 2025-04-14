@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event bubbling</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Event Bubbling</h1>
+
+    <p> when we create event listener for our various nested element then event bubbling happens</p>
+
+
+    <div>
+        <ul>
+            <li>one </li>
+            <li>two</li>
+            <li>three</li>
+        </ul>
+    </div>
+    <script src="app.js"></script>
+
+
+    <h4>open console and check</h4>
+
+    <pre>
+        <span>//javascript code</span>
+
+        let div = document.querySelector("div");
+        let ul = document.querySelector("ul");
+        let lis = document.querySelectorAll("li");
+        
+        div.addEventListener("click" , function() {
+            console.log("div was clicked");
+        })
+        
+        ul.addEventListener("click" , function()
+        {
+            console.log("ul was clicked");
+        
+        })
+        
+        for (li of lis){
+            li.addEventListener("click" , function() {
+                console.log("li was clicked");
+            })
+        }
+    </pre>
+
+    <p> to stop this event bubbling we have a method to do this //  event.stopPropagation();
+    </p>
+
+    <pre>
+        <span>//javascript code</span>
+
+        let div = document.querySelector("div");
+        let ul = document.querySelector("ul");
+        let lis = document.querySelectorAll("li");
+        
+        div.addEventListener("click" , function(event) {
+            event.stopPropagation();
+            console.log("div was clicked");
+        })
+        
+        ul.addEventListener("click" , function(event)
+        {
+            event.stopPropagation();
+            console.log("ul was clicked");
+        
+        })
+        
+        for (li of lis){
+            li.addEventListener("click" , function(event) {
+                event.stopPropagation();
+                console.log("li was clicked");
+            })
+        }
+    </pre>
+</body>
+</html>

@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1, h3{
+    text-align: center;
+
+}
+
+#simon-Container{
+    /* background-color: red; */
+    
+    display: flex;
+    justify-content: center;
+    
+    
+}
+
+.btn{
+    height: 180px;
+    width: 180px;
+    /* background-color: blue; */
+    border: 10px solid black;
+    border-radius: 35px;
+    margin: 1rem;
+}
+
+.box1{
+    background-color: #b74a4a;
+}
+.box2{
+    
+    background-color: #e27a24;
+}
+.box3{
+    background-color: #619897;
+}
+.box4{
+    background-color: #6672dd;
+}
+
+.flash{
+    background-color: #fff;
+}
+
+.userflesh{
+    background-color: yellowgreen;
+}
