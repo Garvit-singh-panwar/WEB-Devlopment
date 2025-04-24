@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Express Session</h1>
+    <p>An attemp to make our session stateful </p>
+    <p>when we go to some website we can add to cart without login we give the user some temp id in which we store some related info </p>
+    <p>this session is made by our express session</p>
+    <p>that session id we pass through cookie in our users browsers</p>
+    <p>cookies saves some tiny bits of information in the browsers (client side)</p>
+    <p>http is a state less protocol so to remember what we do previously we have to save the info </p>
+    <p>we cant save the info in our data bases bucause this is our temperory info we have to save them in tem storage</p>
+    <p> if we dont save the information in session our coumputer will forgot what we done prevoiusly </p>
+
+    <p>
+        first we have to npm install express-session
+    </p>
+    <p>
+        then we have to require it
+    </p>
+    <p>
+        then use the session in app.use(session(secret:"mysupersecretsecretcode"));
+        session is a middleware thats why we use app.use
+    </p>
+    <p>
+        the session id which is going to the clients browsser is a signed cookie and we have to make a secret for signed cookie
+    </p>
+    <p>
+        in the session we are passing that secret in the parameter
+    </p>
+    <p>
+        when we send a request to our server a session id is sent to our client browser
+    </p>
+    <p> 
+        if we add some item in our cart and then copy the link and past it in other our cart and the the things looks sme or if we jump to other pages there is no change in the things we have saved 
+    </p>
+    <p>
+        why they dont change ?
+
+    </p>
+    <p>
+        because we track this in our backend that this is our same session have same sesion id 
+    </p>
+    <p>
+        in state less protocol if our request is sme then our res is also same 
+    </p>
+    <p>
+        but in statefull protocol if our request is same but our response can be changed based on our state
+    </p>
+    <p>
+        to save session we have to use some session stores in production 
+    </p>
+
+    <h2>Connect-flash</h2>
+    <p>its  a npm package </p>
+    <p>To use flash its compulsory to use sessions it is used to show a message when we first time redirect to a page after that it was gone and cant be seen when we refresh the page it just appear when we redirected </p>
+    <p>in req.flash we have to pass two parameter first is key and second is message</p>
+</body>
+</html>
