@@ -5,12 +5,17 @@
 // in react there is something called webpack which makes import export functionality  possible in react
 import "./product.css"
 
-function Product(){
+
+// The Product component receives props from the parent (ProductTab).
+// It uses props to display the title, description, and price of each product.
+// same as function parameters
+function Product( {title, description , price}){
     return (
         // className is a keyword for attribute class  
         <div className="product">
-        <h3>Product Title</h3>
-        <p>Product description</p>
+        <h3>{title}</h3>
+        <p>{ description}</p>
+        <p>price : {price}</p>
         </div>
     );
 }
