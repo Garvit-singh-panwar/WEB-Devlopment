@@ -1,0 +1,8 @@
+/* css file named same as our component  */
+
+.product {
+    border: 1px solid white;
+    border-radius: 14px;
+    margin-bottom: 15px;
+    padding: 0 10px 0 10px;
+}
